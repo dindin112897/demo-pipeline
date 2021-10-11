@@ -1,18 +1,8 @@
 Resources:
   Ec2Instance:
-    Type: 'AWS::EC2::Instance'
+    Type: AWS::EC2::Instance
     Properties:
       SecurityGroups:
-        - !Ref InstanceSecurityGroup
-        - launch-wizard-1
-      KeyName: mykey
-      ImageId: 02e136e904f3da870
-  InstanceSecurityGroup:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Enable SSH access via port 22
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: 0.0.0.0/0
+        - sg-00e3ff8fd747144d3
+      InstanceType: t2.micro
+      ImageId: ami-02e136e904f3da870
